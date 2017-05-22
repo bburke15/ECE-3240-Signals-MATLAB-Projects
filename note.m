@@ -1,0 +1,13 @@
+function tone = note(keynum,fs,harmonic_nums,harmonic_vals, dur)
+% NOTE Produces a sinusoidal signal corresponding to a
+% piano key number
+% usage:
+% tone = output signal
+% keynum = the piano keyboard number of the desired note
+% fs = specified sampling frequency
+% harmonic nums = array containing note harmonic numbers
+% harmonic vals = array containing note harmonic amplitudes
+% dur = time duration of the signal
+%
+fund_freq = 440*2^((keynum-49+1)/12);
+tone = sumcos_funct(fund_freq*harmonic_nums, harmonic_vals, fs, dur)
